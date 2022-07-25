@@ -3,7 +3,7 @@ from common.handle_config import confvalue
 
 
 class RequestHandle:
-    header = {
+    header_token = {
         "Content-Type": "application/json",
     }
 
@@ -15,11 +15,15 @@ class RequestHandle:
 
     def tokenauth(self):
         token = requests.post(url=confvalue.readconf('api', 'weatherurl') + '/authorize/token',
-                              headers=self.header,
+                              headers=self.header_token,
                               json=self.data,
                               verify=False)
         return token
 
+    def currentweather(self):
+        current = requests.get(url=confvalue.readconf('api', 'weatherurl')+'',
+
+                               )
 
 if __name__ == '__main__':
     requesttest = RequestHandle()
