@@ -21,9 +21,10 @@ class RequestHandle:
         return token
 
     def currentweather(self):
-        current = requests.get(url=confvalue.readconf('api', 'weatherurl')+'',
+        current = requests.get(url=confvalue.readconf('api', 'weatherurl') + '',
 
                                )
+
 
 if __name__ == '__main__':
     requesttest = RequestHandle()
